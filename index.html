@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" class="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Muaz Amirruddin | Portfolio</title>
+        <meta name="description" content="Network Operation Center (NOC) Engineer specializing in Cloud Networking, Azure Infrastructure, and VoIP solutions." />
+        
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Muaz Amirruddin | Cloud Networking Portfolio">
+        <meta property="og:description" content="Certified CCNA, AZ-104, and AZ-700 Professional. Explore my projects and networking experience.">
+        <meta name="author" content="Muaz Amirruddin">
+
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" />
+
+        <style>
+            .no-scrollbar::-webkit-scrollbar { display: none; }
+            .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+            .tab-btn.active {
+                background-color: #fbbf24;
+                color: #1e293b;
+                font-weight: bold;
+                border-radius: 4px;
+            }
+
+            .tab-content {
+                animation: fadeIn 0.4s ease-out;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(5px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+
+        <script>
+            window.tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#fbbf24',
+                        }
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body class="flex flex-col w-full bg-slate-800 text-white lg:h-screen min-h-screen">
+        
+        <main class="flex h-full w-full overflow-hidden max-lg:flex-col max-lg:overflow-y-auto">
+            
+            <section class="flex shrink-0 w-full lg:w-[400px] flex-col items-center gap-4 p-8 bg-slate-900 shadow-2xl z-20">
+                <div class="h-48 w-48 overflow-hidden rounded-full border-4 border-primary">
+                    <img src="./assets/images/people/muaz.jpeg" class="h-full w-full object-cover" alt="Muaz Amirruddin" loading="eager" />
+                </div>
+
+                <h1 class="text-3xl font-bold text-center">Muaz Amirruddin</h1>
+                <p class="text-primary font-medium text-sm tracking-widest uppercase text-center">NOC Engineer</p>
+
+                <div class="mt-4 text-justify text-gray-300 text-sm leading-relaxed">
+                    <p>NOC and VoIP professional with over 5 years of hands-on experience in telco and managed services environments.</p>
+                    <p>Proven track record serving prominent organizations including Celcom, NTT Cloud Communications, and M1 Digital Labs.</p>
+                    <p class="mt-2 italic text-primary/80 text-center">"Sometimes the wrong train can take us to the right place" - Paulo Coelho</p>
+                </div>
+
+                <div class="mt-6 flex w-full flex-col gap-3">
+                    <a href="./Muaz_Amirruddin_Resume.pdf" download class="flex items-center justify-center gap-2 rounded-md border-2 border-primary p-2 font-semibold text-primary transition-all hover:bg-primary hover:text-slate-900">
+                        <i class="bi bi-file-earmark-arrow-down-fill"></i>
+                        Download Resume
+                    </a>
+                </div>
+
+                <div class="mt-auto flex gap-6 text-2xl pt-8">
+                    <a href="https://github.com/MuazAmirruddin" target="_blank" class="hover:text-primary transition-colors" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://www.linkedin.com/in/muaz-amirruddin/" target="_blank" class="hover:text-primary transition-colors" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="mailto:muazamirruddin@gmail.com" class="hover:text-primary transition-colors" title="Email"><i class="bi bi-envelope-at-fill"></i></a>
+                </div>
+            </section>
+
+            <div class="relative flex h-full w-full flex-col overflow-hidden bg-slate-800">
+                
+                <header class="p-4 bg-slate-800/50 backdrop-blur-md sticky top-0 z-10 flex justify-center">
+                    <div class="flex h-12 items-center gap-2 overflow-x-auto rounded-lg border border-slate-700 bg-slate-900 p-1 no-scrollbar">
+                        <button class="tab-btn active px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'about')">About</button>
+                        <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'projects')">Projects</button>
+                        <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'certifications')">Certifications</button>
+                        <button class="tab-btn px-6 py-1 whitespace-nowrap transition-all" onclick="openTab(event, 'experience')">Experience</button>
+                    </div>
+                </header>
+
+                <div class="flex-1 overflow-y-auto p-6 lg:p-12">
+                    
+                    <section id="about" class="tab-content flex flex-col items-center gap-12">
+                        <div class="max-w-3xl text-center">
+                            <h2 class="text-5xl font-bold mb-6">Hi 👋, I am <span class="text-primary">Muaz</span></h2>
+                            <div class="space-y-4 text-lg text-gray-300">
+                                <p>A certified Cisco Network Associate <span class="text-primary font-bold">(CCNA)</span>.</p>
+                                <p>Azure Administrator <span class="text-primary font-bold">(AZ-104)</span> & Azure Networking Engineer <span class="text-primary font-bold">(AZ-700)</span>.</p>
+                                <p>Currently seeking a new role in <span class="text-primary font-bold">Cloud Networking & Infrastructure</span>.</p>
+                            </div>
+                        </div>
+
+                        <div class="w-full max-w-4xl">
+                            <h3 class="text-2xl font-bold mb-8 text-center flex items-center justify-center gap-3">
+                                <span class="h-px w-12 bg-slate-700"></span>
+                                Technical Expertise
+                                <span class="h-px w-12 bg-slate-700"></span>
+                            </h3>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-cloud-fill"></i></div>
+                                    <h4 class="font-bold mb-3">Cloud & Infra</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Azure (VNet, ExpressRoute)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> AWS Cloud Health</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Windows/Linux Servers</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Hybrid Connectivity</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-shield-lock-fill"></i></div>
+                                    <h4 class="font-bold mb-3">Networking</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Routing & Switching (CCNA)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> SIP & VoIP Protocols</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Network Security / Firewalls</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Packet Analysis (Wireshark)</li>
+                                    </ul>
+                                </div>
+
+                                <div class="bg-slate-900/50 p-6 rounded-2xl border border-slate-700 hover:border-primary/50 transition-colors">
+                                    <div class="text-primary text-3xl mb-4"><i class="bi bi-gear-wide-connected"></i></div>
+                                    <h4 class="font-bold mb-3">Operations</h4>
+                                    <ul class="text-gray-400 text-sm space-y-2">
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> NOC Monitoring (NMS)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> CI/CD (GitHub Actions)</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Incident Management</li>
+                                        <li class="flex items-center gap-2"><i class="bi bi-check2 text-primary"></i> Backup & Data Resiliency</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="projects" class="tab-content hidden flex flex-col gap-8">
+                        <div class="max-w-4xl mx-auto w-full">
+                            <div id="project-list-view">
+                                <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
+                                <div onclick="showProjectDetails()" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
+                                    <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
+                                        <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
+                                            <i class="bi bi-cloud-check"></i>
+                                        </div>
+                                    </div>
+                                    <div class="md:col-span-8 flex flex-col justify-between">
+                                        <div>
+                                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Azure Static Web App Portfolio</h3>
+                                            <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">Automated deployment of a global high-availability portfolio using Azure SWA and GitHub Actions.</p>
+                                            <span class="text-primary text-sm font-semibold italic">Read Full Documentation →</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="project-detail-view" class="hidden">
+                                <button onclick="hideProjectDetails()" class="flex items-center gap-2 text-primary font-bold mb-8 hover:text-white transition-colors">
+                                    <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
+                                </button>
+                                
+                                <div class="space-y-10">
+                                    <header>
+                                        <h2 class="text-4xl font-bold text-white mb-6">Azure Static Web App Portfolio</h2>
+                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary text-gray-300 leading-relaxed">
+                                            I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume. This portfolio was deployed as an Azure Static Web App (SWA) since it is fast, utilizes a global CDN, and provides free SSL out of the box.
+                                        </div>
+                                    </header>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">1. Frontend Web Development & Pre-requisites</h3>
+                                        <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
+                                        <img src="./assets/images/projects/github.png" onclick="openModal(this.src)" alt="GitHub Repository" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-6">
+                                        <h3 class="text-2xl font-bold text-primary">2. Creating the Resource (Basics)</h3>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">3. Deployment Configuration</h3>
+                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
+                                        <img src="./assets/images/projects/deployment-config.png" onclick="openModal(this.src)" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">4. Advanced & Global CDN</h3>
+                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
+                                        <img src="./assets/images/projects/advanced.png" onclick="openModal(this.src)" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">5. Resource Tagging</h3>
+                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
+                                        <img src="./assets/images/projects/tags.png" onclick="openModal(this.src)" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
+                                            # Automated Workflow Created by Azure<br>
+                                            - name: Build And Deploy<br>
+                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
+                                            &nbsp;&nbsp;with:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">7. Create "Staging" branch in GitHub</h3>
+                                        <p class="text-gray-300">A staging branch was added to the project, ensuring no accidental push and practice of professional CI/CD workflows by separating Production and Staging environments. To further enchance security to the main branch, a branch protection rule is implemented on it so any changes would not be committed directly on the main branch and require confirmation.</p>
+                                        <img src="./assets/images/projects/env.png" onclick="openModal(this.src)" alt="GitHub Staging Environment" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">8. Custom Domains</h3>
+                                        <p class="text-gray-300">To provide a professional identity to the portfolio, I registered <span class="text-white font-semibold">muazamirruddin.com</span> through Cloudflare. I configured the CNAME and ALIAS records to point to the Azure SWA endpoint, enabling secure HTTPS traffic under a personalized URL.</p>
+                                        <img src="./assets/images/projects/domains.png" onclick="openModal(this.src)" alt="Custom Domain Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="certifications" class="tab-content hidden flex flex-col items-center lg:items-start gap-8">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 w-full">
+                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/7CE3658141F8E1C8" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
+                                <div class="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
+                                    <img src="./assets/images/icons/az700.png" class="w-20 h-20 object-contain" alt="AZ-700" />
+                                </div>
+                                <h4 class="text-sm font-bold">Azure Network Engineer</h4>
+                                <p class="text-xs text-gray-400 mb-4">Associate (AZ-700)</p>
+                                <span class="text-[10px] font-bold text-primary uppercase">Verify</span>
+                            </a>
+                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/A047AD96D8034358" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
+                                <div class="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
+                                    <img src="./assets/images/icons/az104.png" class="w-20 h-20 object-contain" alt="AZ-104" />
+                                </div>
+                                <h4 class="text-sm font-bold">Azure Administrator</h4>
+                                <p class="text-xs text-gray-400 mb-4">Associate (AZ-104)</p>
+                                <span class="text-[10px] font-bold text-primary uppercase">Verify</span>
+                            </a>
+                            <a href="https://learn.microsoft.com/api/credentials/share/en-us/MuazAmirruddin-7317/F084A0B6E2A25C75" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
+                                <div class="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-slate-700/30 p-2 shadow-inner">
+                                    <img src="./assets/images/icons/ms700.png" class="w-20 h-20 object-contain" alt="MS-700" />
+                                </div>
+                                <h4 class="text-sm font-bold">Teams Administrator</h4>
+                                <p class="text-xs text-gray-400 mb-4">Associate (MS-700)</p>
+                                <span class="text-[10px] font-bold text-primary uppercase">Verify</span>
+                            </a>
+                            <a href="https://www.credly.com/badges/3b3900d8-cca8-4621-9221-0ca3447ea91f/public_url" target="_blank" class="group flex flex-col items-center rounded-xl border-2 border-slate-700 bg-gradient-to-b from-slate-800 to-slate-900 p-6 shadow-lg transition-all hover:scale-[1.02] hover:border-primary">
+                                <div class="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/10 p-2 shadow-inner ring-1 ring-white/20">
+                                    <img src="./assets/images/icons/ccna-badge.png" class="w-20 h-20 object-contain" alt="CCNA" />
+                                </div>
+                                <h4 class="text-sm font-bold">Cisco CCNA</h4>
+                                <p class="text-xs text-gray-400 mb-4">Network Associate</p>
+                                <span class="text-[10px] font-bold text-primary uppercase">Verify</span>
+                            </a>
+                        </div>
+                    </section>
+
+                    <section id="experience" class="tab-content hidden">
+                        <div class="flex w-full flex-col items-center gap-6">
+                            <div class="flex flex-col gap-10 w-full max-w-[900px] pb-20">
+                                
+                                <div class="relative pl-8 border-l-2 border-primary">
+                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-primary shadow-[0_0_10px_#fbbf24]"></div>
+                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">M1 Digital Labs Sdn. Bhd.</h3>
+                                    <p class="text-primary font-medium italic mb-4">Network Operation Center Engineer | 12/2022 - Present</p>
+                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
+                                        <li><strong class="text-white">Infrastructure Surveillance:</strong> Provide 24/7 proactive monitoring of hybrid infrastructure, including on-premises network devices and Windows/Linux server environments to ensure 99.9% uptime.</li>
+                                        <li><strong class="text-white">Cloud Health Management:</strong> Oversee Azure and AWS cloud health utilizing <span class="text-primary/90">Azure Monitor</span> and AWS Health Dashboard; triaging alerts and executing incident response.</li>
+                                        <li><strong class="text-white">Data Resiliency:</strong> Manage and audit daily backup operations for critical business data, ensuring successful recovery points and compliance with RPO/RTO targets.</li>
+                                        <li><strong class="text-white">Endpoint & Security Ops:</strong> Orchestrate monthly Windows Patch Management and coordinate threat response for malware/suspicious activity, maintaining environment hardening.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="relative pl-8 border-l-2 border-slate-600">
+                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
+                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">NTT Cloud Communications</h3>
+                                    <p class="text-gray-400 font-medium italic mb-4">Global Support Engineer | 05/2021 - 11/2022</p>
+                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
+                                        <li><strong class="text-white">Global Technical Support:</strong> Acted as a Tier 1 escalation point for global enterprise clients, managing complex Service Desk requests for UCaaS solutions.</li>
+                                        <li><strong class="text-white">VoIP Protocol Analysis:</strong> Diagnosed voice quality issues by analyzing <span class="text-primary/90">SIP call flows</span> to isolate faults between carrier, SBC, and internal networks.</li>
+                                        <li><strong class="text-white">Microsoft Teams Engineering:</strong> Provided specialized support for Teams Phone System, troubleshooting call routing, Direct Routing, and media quality issues.</li>
+                                        <li><strong class="text-white">Identity & Access Management:</strong> Managed full lifecycle of Teams Voice users, including provisioning and configuration via Teams Admin Center.</li>
+                                    </ul>
+                                </div>
+
+                                <div class="relative pl-8 border-l-2 border-slate-600">
+                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
+                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">Celcom Networks Sdn. Bhd.</h3>
+                                    <p class="text-gray-400 font-medium italic mb-4">Network Operation Center Engineer | 06/2019 - 05/2021</p>
+                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
+                                        <li><strong class="text-white">RAN Operations:</strong> Monitored Radio Access Network (RAN) availability; performed remote Layer 1 remediation including BBU and RRH resets to restore service.</li>
+                                        <li><strong class="text-white">Core Transport Monitoring:</strong> Supervised the <span class="text-primary/90">Packet Transport Network (PTN)</span> to ensure high-speed backhaul performance and SLA compliance.</li>
+                                        <li><strong class="text-white">Fiber Infrastructure Assurance:</strong> Managed surveillance of the core optical fiber backbone; utilized NMS alerts to pinpoint fiber cuts, reducing Mean Time to Repair (MTTR).</li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onclick="closeModal()">
+            <img id="modalImg" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
+        </div>
+
+        <script>
+            function openTab(evt, tabId) {
+                const contents = document.querySelectorAll('.tab-content');
+                contents.forEach(content => content.classList.add('hidden'));
+                const buttons = document.querySelectorAll('.tab-btn');
+                buttons.forEach(btn => btn.classList.remove('active'));
+                document.getElementById(tabId).classList.remove('hidden');
+                evt.currentTarget.classList.add('active');
+                if (tabId !== 'projects') hideProjectDetails();
+                document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            function showProjectDetails() {
+                document.getElementById('project-list-view').classList.add('hidden');
+                document.getElementById('project-detail-view').classList.remove('hidden');
+            }
+
+            function hideProjectDetails() {
+                document.getElementById('project-detail-view').classList.add('hidden');
+                document.getElementById('project-list-view').classList.remove('hidden');
+            }
+
+            function openModal(src) {
+                const modal = document.getElementById('imageModal');
+                const modalImg = document.getElementById('modalImg');
+                modal.classList.remove('hidden');
+                modalImg.src = src;
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeModal() {
+                document.getElementById('imageModal').classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        </script>
+    </body>
+</html>
