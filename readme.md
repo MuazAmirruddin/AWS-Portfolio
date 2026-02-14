@@ -15,4 +15,3 @@ This project can be divided to few phases below.
 3. Set up CloudFront (CDN)
 4. Set up Domain & SSL (Cloudflare + AWS)
 5. Automation (CI/CD)
-6. Infrastructure-as-Code (IaC)
