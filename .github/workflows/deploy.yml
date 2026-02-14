@@ -1,10 +1,10 @@
 name: Deploy Portfolio
 on:
   push:
-    branches: [ main ]
+    branches: [ main, dev ] # Listens to both branches
 
 permissions:
-  id-token: write # Required for OIDC
+  id-token: write
   contents: read
 
 jobs:
@@ -14,6 +14,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # 🧠 THE LOGIC: Set variables based on which branch was pushed
+      - name: Set Environment Variables
+        run: |
+          if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then
+            echo "BUCKET_NAME=${{ secrets.S3_BUCKET_PROD }}" >> $GITHUB_ENV
+            echo "DIST_ID=${{ secrets.CF_DIST_ID_PROD }}" >> $GITHUB_ENV
+          else
+            echo "BUCKET_NAME=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV
+            echo "DIST_ID=${{ secrets.CF_DIST_ID_DEV }}" >> $GITHUB_ENV
+          fi
+
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -21,8 +32,9 @@ jobs:
           aws-region: us-east-1
 
       - name: Sync S3
-        # If your files are in a folder like 'dist', change '.' to './dist'
-        run: aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete
+        # Uses the dynamic BUCKET_NAME from the logic step above
+        run: aws s3 sync . s3://${{ env.BUCKET_NAME }} --delete
 
       - name: Invalidate CloudFront
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CF_DIST_ID }} --paths "/*"
+        # Uses the dynamic DIST_ID from the logic step above
+        run: aws cloudfront create-invalidation --distribution-id ${{ env.DIST_ID }} --paths "/*"
