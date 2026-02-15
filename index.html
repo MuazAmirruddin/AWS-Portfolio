@@ -33,10 +33,6 @@
                 from { opacity: 0; transform: translateY(5px); }
                 to { opacity: 1; transform: translateY(0); }
             }
-
-            .project-detail {
-                animation: fadeIn 0.5s ease-in-out;
-            }
         </style>
 
         <script>
@@ -175,7 +171,7 @@
                                 <div onclick="showProjectDetails('project-aws-migration')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-aws transition-all shadow-xl cursor-pointer">
                                     <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
                                         <div class="text-6xl text-aws opacity-80 group-hover:scale-110 transition-transform duration-500">
-                                            <i class="bi bi-box-fill"></i>
+                                            <i class="bi bi-amazon"></i>
                                         </div>
                                     </div>
                                     <div class="md:col-span-8 flex flex-col justify-between">
@@ -206,17 +202,60 @@
                                         <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
                                         <img src="./assets/images/projects/github.png" onclick="openModal(this.src)" alt="GitHub Repository" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
-                                    
+
                                     <div class="space-y-6">
                                         <h3 class="text-2xl font-bold text-azure">2. Creating the Resource</h3>
-                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>.</p>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        
                                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
-                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
-                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
                                         </div>
                                     </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">3. Deployment Configuration</h3>
+                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
+                                        <img src="./assets/images/projects/deployment-config.png" onclick="openModal(this.src)" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">4. Advanced & Global CDN</h3>
+                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
+                                        <img src="./assets/images/projects/advanced.png" onclick="openModal(this.src)" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">5. Resource Tagging</h3>
+                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
+                                        <img src="./assets/images/projects/tags.png" onclick="openModal(this.src)" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">6. Automating Updates (CI/CD Pipeline)</h3>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
+                                            # Automated Workflow Created by Azure<br>
+                                            - name: Build And Deploy<br>
+                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
+                                            &nbsp;&nbsp;with:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">7. Create "Staging" branch in GitHub</h3>
+                                        <p class="text-gray-300">A staging branch was added to the project, ensuring no accidental push and practice of professional CI/CD workflows by separating Production and Staging environments. To further enchance security to the main branch, a branch protection rule is implemented on it so any changes would not be committed directly on the main branch and require confirmation.</p>
+                                        <img src="./assets/images/projects/env.png" onclick="openModal(this.src)" alt="GitHub Staging Environment" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-azure">8. Custom Domains</h3>
+                                        <p class="text-gray-300">To provide a professional identity to the portfolio, I registered <span class="text-white font-semibold">muazamirruddin.com</span> through Cloudflare. I configured the CNAME and ALIAS records to point to the Azure SWA endpoint, enabling secure HTTPS traffic under a personalized URL.</p>
+                                        <img src="./assets/images/projects/domains.png" onclick="openModal(this.src)" alt="Custom Domain Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+                                </div>
                             </div>
 
                             <div id="project-aws-migration" class="hidden project-detail">
@@ -233,10 +272,38 @@
 
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-bold text-aws">1. Architecture Evolution</h3>
-                                        <p class="text-gray-300">Transitioned from Azure SWA to a custom stack using <strong>Amazon S3</strong> and <strong>CloudFront</strong> with Origin Access Control (OAC).</p>
-                                        <img src="./assets/images/projects/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <p class="text-gray-300">Transitioned from Azure SWA to a custom stack using <strong>Amazon S3</strong> for storage and <strong>CloudFront</strong> for global distribution with Origin Access Control (OAC) that restricts access to private S3 buckets, ensuring content is served only through designated CloudFront distributions rather than public URLs.</p>
+                                        <img src="./assets/images/projects/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture Diagram" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-aws">2. Secure Authentication (OIDC)</h3>
+                                        <p class="text-gray-300">Eliminated long-lived AWS Access Keys. Used <strong>OpenID Connect</strong> to establish a short-lived trust relationship between GitHub Actions and AWS IAM.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-blue-300 overflow-x-auto">
+                                            Condition: { StringLike: { "token.actions.githubusercontent.com:sub": "repo:MuazAmirruddin/AWS-Portfolio:*" } }
+                                        </div>
                                     </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-aws">3. Multi-Branch Logic</h3>
+                                        <p class="text-gray-300">Implemented a "Smart Deployer" in YAML. Code pushed to <strong>dev</strong> updates the staging bucket; code pushed to <strong>main</strong> updates the live production bucket.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
+                                            if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then<br>
+                                            &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_PROD }}" >> $GITHUB_ENV<br>
+                                            &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_PROD }}" >> $GITHUB_ENV<br>
+                                            &nbsp;&nbsp;else<br>
+                                            &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV<br>
+                                            &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_DEV }}" >> $GITHUB_ENV<br>
+                                            &nbsp;&nbsp;fi
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-aws">4. Cloudflare Subdomain Routing</h3>
+                                        <p class="text-gray-300">Configured Cloudflare DNS to manage the <span class="text-white">staging.muazamirruddin.com</span> subdomain, pointing to the secondary CloudFront distribution.</p>
+                                        <img src="./assets/images/projects/cloudflare-dns.png" onclick="openModal(this.src)" alt="DNS Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </section>
@@ -313,24 +380,21 @@
             </div>
         </main>
 
-        <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4" onclick="closeModal()">
+        <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4 cursor-pointer" onclick="closeModal()">
             <img id="modalImg" class="max-w-full max-h-full rounded-lg shadow-2xl" src="">
         </div>
 
         <script>
             function openTab(evt, tabName) {
                 const contents = document.getElementsByClassName("tab-content");
-                for (let i = 0; i < contents.length; i++) {
-                    contents[i].classList.add("hidden");
-                }
+                for (let i = 0; i < contents.length; i++) contents[i].classList.add("hidden");
+                
                 const buttons = document.getElementsByClassName("tab-btn");
-                for (let i = 0; i < buttons.length; i++) {
-                    buttons[i].classList.remove("active");
-                }
+                for (let i = 0; i < buttons.length; i++) buttons[i].classList.remove("active");
+                
                 document.getElementById(tabName).classList.remove("hidden");
                 evt.currentTarget.classList.add("active");
                 
-                // If switching tabs, always show the project list, not details
                 if (tabName === 'projects') hideProjectDetails();
             }
 
@@ -339,6 +403,7 @@
                 const details = document.getElementsByClassName('project-detail');
                 for (let d of details) d.classList.add('hidden');
                 document.getElementById(id).classList.remove('hidden');
+                document.querySelector('.flex-1').scrollTop = 0;
             }
 
             function hideProjectDetails() {
