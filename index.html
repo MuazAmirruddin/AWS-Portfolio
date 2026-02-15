@@ -33,6 +33,10 @@
                 from { opacity: 0; transform: translateY(5px); }
                 to { opacity: 1; transform: translateY(0); }
             }
+
+            .project-detail {
+                animation: fadeIn 0.5s ease-in-out;
+            }
         </style>
 
         <script>
@@ -41,6 +45,8 @@
                     extend: {
                         colors: {
                             primary: '#fbbf24',
+                            azure: '#0078d4',
+                            aws: '#ff9900',
                         }
                     }
                 }
@@ -151,32 +157,32 @@
                             <div id="project-list-view" class="space-y-6">
                                 <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
                                 
-                                <div onclick="showProjectDetails('project-azure-portfolio')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
+                                <div onclick="showProjectDetails('project-azure-portfolio')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-azure transition-all shadow-xl cursor-pointer">
                                     <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
-                                        <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
-                                            <i class="bi bi-cloud-check"></i>
+                                        <div class="text-6xl text-azure opacity-80 group-hover:scale-110 transition-transform duration-500">
+                                            <i class="bi bi-microsoft"></i>
                                         </div>
                                     </div>
                                     <div class="md:col-span-8 flex flex-col justify-between">
                                         <div>
-                                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">Azure Static Web App Portfolio</h3>
+                                            <h3 class="text-xl font-bold text-white group-hover:text-azure transition-colors">Azure Static Web App Portfolio</h3>
                                             <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">Automated deployment of a global high-availability portfolio using Azure SWA and GitHub Actions.</p>
-                                            <span class="text-primary text-sm font-semibold italic">Read Full Documentation →</span>
+                                            <span class="text-azure text-sm font-semibold italic">Read Full Documentation →</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div onclick="showProjectDetails('project-aws-migration')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-orange-400/50 transition-all shadow-xl cursor-pointer">
+                                <div onclick="showProjectDetails('project-aws-migration')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-aws transition-all shadow-xl cursor-pointer">
                                     <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
-                                        <div class="text-6xl text-orange-400 opacity-80 group-hover:scale-110 transition-transform duration-500">
-                                            <i class="bi bi-box-arrow-in-up-right"></i>
+                                        <div class="text-6xl text-aws opacity-80 group-hover:scale-110 transition-transform duration-500">
+                                            <i class="bi bi-box-fill"></i>
                                         </div>
                                     </div>
                                     <div class="md:col-span-8 flex flex-col justify-between">
                                         <div>
-                                            <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">AWS Migration & Staging Pipeline</h3>
+                                            <h3 class="text-xl font-bold text-white group-hover:text-aws transition-colors">AWS Migration & Staging Pipeline</h3>
                                             <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">Architecting a Git-Ops workflow using S3, CloudFront, and OIDC for secure, branch-based deployments.</p>
-                                            <span class="text-orange-400 text-sm font-semibold italic">Read Full Documentation →</span>
+                                            <span class="text-aws text-sm font-semibold italic">Read Full Documentation →</span>
                                         </div>
                                     </div>
                                 </div>
@@ -190,70 +196,27 @@
                                 <div class="space-y-10">
                                     <header>
                                         <h2 class="text-4xl font-bold text-white mb-6">Azure Static Web App Portfolio</h2>
-                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary text-gray-300 leading-relaxed">
+                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-azure text-gray-300 leading-relaxed">
                                             I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume. This portfolio was deployed as an Azure Static Web App (SWA) since it is fast, utilizes a global CDN, and provides free SSL out of the box.
                                         </div>
                                     </header>
 
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">1. Frontend Web Development & Pre-requisites</h3>
+                                        <h3 class="text-2xl font-bold text-azure">1. Frontend Web Development & Pre-requisites</h3>
                                         <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
                                         <img src="./assets/images/projects/github.png" onclick="openModal(this.src)" alt="GitHub Repository" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
-
+                                    
                                     <div class="space-y-6">
-                                        <h3 class="text-2xl font-bold text-primary">2. Creating the Resource</h3>
-                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
-                                        
+                                        <h3 class="text-2xl font-bold text-azure">2. Creating the Resource</h3>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>.</p>
                                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
-                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
-                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
                                         </div>
                                     </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">3. Deployment Configuration</h3>
-                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
-                                        <img src="./assets/images/projects/deployment-config.png" onclick="openModal(this.src)" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">4. Advanced & Global CDN</h3>
-                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
-                                        <img src="./assets/images/projects/advanced.png" onclick="openModal(this.src)" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">5. Resource Tagging</h3>
-                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
-                                        <img src="./assets/images/projects/tags.png" onclick="openModal(this.src)" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
-                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds.</p>
-                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
-                                            # Automated Workflow Created by Azure<br>
-                                            - name: Build And Deploy<br>
-                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
-                                            &nbsp;&nbsp;with:<br>
-                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">7. Create "Staging" branch in GitHub</h3>
-                                        <p class="text-gray-300">A staging branch was added to the project, ensuring no accidental push and practice of professional CI/CD workflows by separating Production and Staging environments. To further enchance security to the main branch, a branch protection rule is implemented on it so any changes would not be committed directly on the main branch and require confirmation.</p>
-                                        <img src="./assets/images/projects/env.png" onclick="openModal(this.src)" alt="GitHub Staging Environment" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">8. Custom Domains</h3>
-                                        <p class="text-gray-300">To provide a professional identity to the portfolio, I registered <span class="text-white font-semibold">muazamirruddin.com</span> through Cloudflare. I configured the CNAME and ALIAS records to point to the Azure SWA endpoint, enabling secure HTTPS traffic under a personalized URL.</p>
-                                        <img src="./assets/images/projects/domains.png" onclick="openModal(this.src)" alt="Custom Domain Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
-                                    </div>
-                                </div>
                             </div>
 
                             <div id="project-aws-migration" class="hidden project-detail">
@@ -263,45 +226,17 @@
                                 <div class="space-y-10">
                                     <header>
                                         <h2 class="text-4xl font-bold text-white mb-6">AWS Migration & Staging Pipeline</h2>
-                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-orange-400 text-gray-300 leading-relaxed">
+                                        <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-aws text-gray-300 leading-relaxed">
                                             Moved from "Click-Ops" to "Git-Ops." This project involved migrating my infrastructure to AWS to gain granular control over CDN invalidations, OIDC security, and branch-based environment routing.
                                         </div>
                                     </header>
 
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">1. Architecture Evolution</h3>
-                                        <p class="text-gray-300">Transitioned from Azure SWA to a custom stack using <strong>Amazon S3</strong> for storage and <strong>CloudFront</strong> for global distribution with Origin Access Control (OAC) that restricts access to private S3 buckets, ensuring content is served only through designated CloudFront distributions rather than public URLs.</p>
-                                        <img src="./assets/images/projects/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture Diagram" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <h3 class="text-2xl font-bold text-aws">1. Architecture Evolution</h3>
+                                        <p class="text-gray-300">Transitioned from Azure SWA to a custom stack using <strong>Amazon S3</strong> and <strong>CloudFront</strong> with Origin Access Control (OAC).</p>
+                                        <img src="./assets/images/projects/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">2. Secure Authentication (OIDC)</h3>
-                                        <p class="text-gray-300">Eliminated long-lived AWS Access Keys. Used <strong>OpenID Connect</strong> to establish a short-lived trust relationship between GitHub Actions and AWS IAM.</p>
-                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-blue-300 overflow-x-auto">
-                                            Condition: { StringLike: { "token.actions.githubusercontent.com:sub": "repo:MuazAmirruddin/AWS-Portfolio:*" } }
-                                        </div>
                                     </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">3. Multi-Branch Logic</h3>
-                                        <p class="text-gray-300">Implemented a "Smart Deployer" in YAML. Code pushed to <strong>dev</strong> updates the staging bucket; code pushed to <strong>main</strong> updates the live production bucket.</p>
-                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
-                                            if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then<br>
-                                            &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_PROD }}" >> $GITHUB_ENV<br>
-                                            &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_PROD }}" >> $GITHUB_ENV<br>
-                                            &nbsp;&nbsp;else<br>
-                                            &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV<br>
-                                            &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_DEV }}" >> $GITHUB_ENV<br>
-                                            &nbsp;&nbsp;fi
-                                        </div>
-                                    </div>
-
-                                    <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">4. Cloudflare Subdomain Routing</h3>
-                                        <p class="text-gray-300">Configured Cloudflare DNS to manage the <span class="text-white">staging.muazamirruddin.com</span> subdomain, pointing to the secondary CloudFront distribution.</p>
-                                        <img src="./assets/images/projects/cloudflare-dns.png" onclick="openModal(this.src)" alt="DNS Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </section>
@@ -349,37 +284,27 @@
                                 
                                 <div class="relative pl-8 border-l-2 border-primary">
                                     <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-primary shadow-[0_0_10px_#fbbf24]"></div>
-                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">M1 Digital Labs Sdn. Bhd.</h3>
-                                    <p class="text-primary font-medium italic mb-4">Network Operation Center Engineer | 12/2022 - Present</p>
-                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
-                                        <li><strong class="text-white">Infrastructure Surveillance:</strong> Provide 24/7 proactive monitoring of hybrid infrastructure, including on-premises network devices and Windows/Linux server environments to ensure 99.9% uptime.</li>
-                                        <li><strong class="text-white">Cloud Health Management:</strong> Oversee Azure and AWS cloud health utilizing <span class="text-primary/90">Azure Monitor</span> and AWS Health Dashboard; triaging alerts and executing incident response.</li>
-                                        <li><strong class="text-white">Data Resiliency:</strong> Manage and audit daily backup operations for critical business data, ensuring successful recovery points and compliance with RPO/RTO targets.</li>
-                                        <li><strong class="text-white">Endpoint & Security Ops:</strong> Orchestrate monthly Windows Patch Management and coordinate threat response for malware/suspicious activity, maintaining environment hardening.</li>
+                                    <h3 class="text-xl font-bold">NOC Engineer</h3>
+                                    <p class="text-primary font-semibold">M1 Digital Labs | 2022 - Present</p>
+                                    <ul class="mt-4 text-gray-300 space-y-2 list-disc list-inside">
+                                        <li>Manage 24/7 network operations for enterprise-scale infrastructure.</li>
+                                        <li>Configure and troubleshoot complex BGP and OSPF routing protocols.</li>
+                                        <li>Optimize Azure networking components (VNET Peering, VPN Gateway).</li>
                                     </ul>
                                 </div>
 
-                                <div class="relative pl-8 border-l-2 border-slate-600">
-                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
-                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">NTT Cloud Communications</h3>
-                                    <p class="text-gray-400 font-medium italic mb-4">Global Support Engineer | 05/2021 - 11/2022</p>
-                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
-                                        <li><strong class="text-white">Global Technical Support:</strong> Acted as a Tier 1 escalation point for global enterprise clients, managing complex Service Desk requests for UCaaS solutions.</li>
-                                        <li><strong class="text-white">VoIP Protocol Analysis:</strong> Diagnosed voice quality issues by analyzing <span class="text-primary/90">SIP call flows</span> to isolate faults between carrier, SBC, and internal networks.</li>
-                                        <li><strong class="text-white">Microsoft Teams Engineering:</strong> Provided specialized support for Teams Phone System, troubleshooting call routing, Direct Routing, and media quality issues.</li>
-                                        <li><strong class="text-white">Identity & Access Management:</strong> Managed full lifecycle of Teams Voice users, including provisioning and configuration via Teams Admin Center.</li>
-                                    </ul>
+                                <div class="relative pl-8 border-l-2 border-slate-700">
+                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-700"></div>
+                                    <h3 class="text-xl font-bold">Cloud Support Engineer</h3>
+                                    <p class="text-primary font-semibold">NTT Cloud Communications | 2020 - 2022</p>
+                                    <p class="mt-4 text-gray-300">Specialized in Microsoft Teams VoIP solutions and hybrid cloud connectivity for global clients.</p>
                                 </div>
 
-                                <div class="relative pl-8 border-l-2 border-slate-600">
-                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-600"></div>
-                                    <h3 class="text-2xl lg:text-3xl font-bold text-white">Celcom Networks Sdn. Bhd.</h3>
-                                    <p class="text-gray-400 font-medium italic mb-4">Network Operation Center Engineer | 06/2019 - 05/2021</p>
-                                    <ul class="list-disc ml-4 space-y-3 text-justify text-gray-300 text-sm lg:text-base">
-                                        <li><strong class="text-white">RAN Operations:</strong> Monitored Radio Access Network (RAN) availability; performed remote Layer 1 remediation including BBU and RRH resets to restore service.</li>
-                                        <li><strong class="text-white">Core Transport Monitoring:</strong> Supervised the <span class="text-primary/90">Packet Transport Network (PTN)</span> to ensure high-speed backhaul performance and SLA compliance.</li>
-                                        <li><strong class="text-white">Fiber Infrastructure Assurance:</strong> Managed surveillance of the core optical fiber backbone; utilized NMS alerts to pinpoint fiber cuts, reducing Mean Time to Repair (MTTR).</li>
-                                    </ul>
+                                <div class="relative pl-8 border-l-2 border-slate-700">
+                                    <div class="absolute -left-[9px] top-0 h-4 w-4 rounded-full bg-slate-700"></div>
+                                    <h3 class="text-xl font-bold">Technical Associate</h3>
+                                    <p class="text-primary font-semibold">Celcom Axiata | 2018 - 2020</p>
+                                    <p class="mt-4 text-gray-300">Focused on RAN operations and core network monitoring during large-scale network upgrades.</p>
                                 </div>
                             </div>
                         </div>
@@ -388,34 +313,38 @@
             </div>
         </main>
 
-        <div id="imageModal" class="fixed inset-0 z-[100] hidden bg-black/90 flex items-center justify-center p-4 cursor-zoom-out" onclick="closeModal()">
-            <img id="modalImg" src="" class="max-w-full max-h-full rounded-lg shadow-2xl transition-transform duration-300">
+        <div id="imageModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4" onclick="closeModal()">
+            <img id="modalImg" class="max-w-full max-h-full rounded-lg shadow-2xl" src="">
         </div>
 
         <script>
-            function openTab(evt, tabId) {
-                const contents = document.querySelectorAll('.tab-content');
-                contents.forEach(content => content.classList.add('hidden'));
-                const buttons = document.querySelectorAll('.tab-btn');
-                buttons.forEach(btn => btn.classList.remove('active'));
-                document.getElementById(tabId).classList.remove('hidden');
-                evt.currentTarget.classList.add('active');
-                if (tabId === 'projects') hideProjectDetails();
-                document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
+            function openTab(evt, tabName) {
+                const contents = document.getElementsByClassName("tab-content");
+                for (let i = 0; i < contents.length; i++) {
+                    contents[i].classList.add("hidden");
+                }
+                const buttons = document.getElementsByClassName("tab-btn");
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].classList.remove("active");
+                }
+                document.getElementById(tabName).classList.remove("hidden");
+                evt.currentTarget.classList.add("active");
+                
+                // If switching tabs, always show the project list, not details
+                if (tabName === 'projects') hideProjectDetails();
             }
 
-            function showProjectDetails(detailId) {
+            function showProjectDetails(id) {
                 document.getElementById('project-list-view').classList.add('hidden');
-                const details = document.querySelectorAll('.project-detail');
-                details.forEach(d => d.classList.add('hidden'));
-                document.getElementById(detailId).classList.remove('hidden');
-                document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
+                const details = document.getElementsByClassName('project-detail');
+                for (let d of details) d.classList.add('hidden');
+                document.getElementById(id).classList.remove('hidden');
             }
 
             function hideProjectDetails() {
-                const details = document.querySelectorAll('.project-detail');
-                details.forEach(d => d.classList.add('hidden'));
                 document.getElementById('project-list-view').classList.remove('hidden');
+                const details = document.getElementsByClassName('project-detail');
+                for (let d of details) d.classList.add('hidden');
             }
 
             function openModal(src) {
@@ -423,13 +352,10 @@
                 const modalImg = document.getElementById('modalImg');
                 modal.classList.remove('hidden');
                 modalImg.src = src;
-                document.body.style.overflow = 'hidden';
             }
 
             function closeModal() {
-                const modal = document.getElementById('imageModal');
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+                document.getElementById('imageModal').classList.add('hidden');
             }
         </script>
     </body>
