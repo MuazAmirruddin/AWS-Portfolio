@@ -151,7 +151,7 @@
                             <div id="project-list-view" class="space-y-6">
                                 <h2 class="text-3xl font-bold mb-8 border-b border-slate-700 pb-2">Technical Projects</h2>
                                 
-                                <div onclick="showProjectDetails('project-azure-swa')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
+                                <div onclick="showProjectDetails('project-azure-portfolio')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
                                     <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
                                         <div class="text-6xl text-primary opacity-80 group-hover:scale-110 transition-transform duration-500">
                                             <i class="bi bi-cloud-check"></i>
@@ -166,37 +166,92 @@
                                     </div>
                                 </div>
 
-                                <div onclick="showProjectDetails('project-aws-migration')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-primary/50 transition-all shadow-xl cursor-pointer">
+                                <div onclick="showProjectDetails('project-aws-migration')" class="group relative grid grid-cols-1 md:grid-cols-12 gap-6 bg-slate-900/50 border border-slate-700 p-6 rounded-2xl hover:border-orange-400/50 transition-all shadow-xl cursor-pointer">
                                     <div class="md:col-span-4 flex items-center justify-center bg-slate-800 rounded-xl overflow-hidden border border-slate-700 p-8">
                                         <div class="text-6xl text-orange-400 opacity-80 group-hover:scale-110 transition-transform duration-500">
-                                            <i class="bi bi-box-arrow-up-right"></i>
+                                            <i class="bi bi-box-arrow-in-up-right"></i>
                                         </div>
                                     </div>
                                     <div class="md:col-span-8 flex flex-col justify-between">
                                         <div>
-                                            <h3 class="text-xl font-bold text-white group-hover:text-primary transition-colors">AWS Migration & Multi-Environment CI/CD</h3>
-                                            <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">Migrating from managed SWA to a custom AWS S3 + CloudFront architecture with automated Staging/Production branch logic.</p>
-                                            <span class="text-primary text-sm font-semibold italic">Read Full Documentation →</span>
+                                            <h3 class="text-xl font-bold text-white group-hover:text-orange-400 transition-colors">AWS Migration & Staging Pipeline</h3>
+                                            <p class="text-gray-400 text-sm leading-relaxed mb-4 text-justify">Architecting a Git-Ops workflow using S3, CloudFront, and OIDC for secure, branch-based deployments.</p>
+                                            <span class="text-orange-400 text-sm font-semibold italic">Read Full Documentation →</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <div id="project-azure-swa" class="hidden project-detail">
+                            <div id="project-azure-portfolio" class="hidden project-detail">
                                 <button onclick="hideProjectDetails()" class="flex items-center gap-2 text-primary font-bold mb-8 hover:text-white transition-colors">
                                     <i class="bi bi-arrow-left-circle-fill"></i> Back to Projects
                                 </button>
+                                
                                 <div class="space-y-10">
                                     <header>
                                         <h2 class="text-4xl font-bold text-white mb-6">Azure Static Web App Portfolio</h2>
                                         <div class="bg-slate-900/50 p-6 rounded-xl border-l-4 border-primary text-gray-300 leading-relaxed">
-                                            I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume.
+                                            I built this project to kickstart my journey in Cloud Engineering by setting up a professional portfolio which will give me both hands-on experience and a platform to share my resume. This portfolio was deployed as an Azure Static Web App (SWA) since it is fast, utilizes a global CDN, and provides free SSL out of the box.
                                         </div>
                                     </header>
+
                                     <div class="space-y-4">
-                                        <h3 class="text-2xl font-bold text-primary">Deployment Strategy</h3>
-                                        <p class="text-gray-300">Push to GitHub -> Handshake via Deployment Token -> Azure CDN Replication.</p>
-                                        <img src="./assets/images/project/github.png" onclick="openModal(this.src)" alt="GitHub" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <h3 class="text-2xl font-bold text-primary">1. Frontend Web Development & Pre-requisites</h3>
+                                        <p class="text-gray-300">The base template was sourced from Awesome Landing Pages / HTMLRev, which I customized and enhanced with the help of Gemini AI to improve accessibility, layout, and modern coding standards. Afterwards, I ensured index.html and assets were pushed to my GitHub repository and my Azure account was active.</p>
+                                        <img src="./assets/images/projects/github.png" onclick="openModal(this.src)" alt="GitHub Repository" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-6">
+                                        <h3 class="text-2xl font-bold text-primary">2. Creating the Resource (Basics)</h3>
+                                        <p class="text-gray-300">Logged into the Azure Portal and initiated the creation of the Static Web App. I filled in the subscription details and created a new Resource Group: <code class="text-primary font-mono px-1">rg-muaz-portfolio</code>. I picked the region closest to me (East Asia) and selected GitHub as my source.</p>
+                                        
+                                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                            <img src="./assets/images/projects/basics-1.png" onclick="openModal(this.src)" alt="Azure Basics Step 1" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-2.png" onclick="openModal(this.src)" alt="Azure Basics Step 2" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                            <img src="./assets/images/projects/basics-3.png" onclick="openModal(this.src)" alt="Azure Basics Step 3" class="rounded-lg border border-slate-700 bg-slate-900 w-full hover:scale-[1.02] transition-transform cursor-zoom-in" />
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">3. Deployment Configuration</h3>
+                                        <p class="text-gray-300">I used the Deployment Token approach. The authorization flow follows a specific handshake using GitHub Action secrets to ensure only authorized automated pipelines can modify the portfolio.</p>
+                                        <img src="./assets/images/projects/deployment-config.png" onclick="openModal(this.src)" alt="Deployment Handshake" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">4. Advanced & Global CDN</h3>
+                                        <p class="text-gray-300">Azure Static Web Apps automatically use a Global CDN, which replicates the HTML and images to edge servers all over the world. The location selection here primarily affects staging environments and Backend APIs (Azure Functions).</p>
+                                        <img src="./assets/images/projects/advanced.png" onclick="openModal(this.src)" alt="Advanced Networking" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">5. Resource Tagging</h3>
+                                        <p class="text-gray-300">Tags were implemented for organization and resource tracking within the Azure environment.</p>
+                                        <img src="./assets/images/projects/tags.png" onclick="openModal(this.src)" alt="Resource Tags" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">6. Automating Updates (CI/CD Pipeline)</h3>
+                                        <p class="text-gray-300">When I created the SWA, Azure automatically added a YAML file to my repository. Now, every time I push a change to GitHub, my website updates automatically within seconds.</p>
+                                        <div class="bg-slate-900 p-6 rounded-xl border border-slate-700 font-mono text-sm text-green-400 overflow-x-auto">
+                                            # Automated Workflow Created by Azure<br>
+                                            - name: Build And Deploy<br>
+                                            &nbsp;&nbsp;uses: Azure/static-web-apps-deploy@v1<br>
+                                            &nbsp;&nbsp;with:<br>
+                                            &nbsp;&nbsp;&nbsp;&nbsp;azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">7. Create "Staging" branch in GitHub</h3>
+                                        <p class="text-gray-300">A staging branch was added to the project, ensuring no accidental push and practice of professional CI/CD workflows by separating Production and Staging environments. To further enchance security to the main branch, a branch protection rule is implemented on it so any changes would not be committed directly on the main branch and require confirmation.</p>
+                                        <img src="./assets/images/projects/env.png" onclick="openModal(this.src)" alt="GitHub Staging Environment" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                    </div>
+
+                                    <div class="space-y-4">
+                                        <h3 class="text-2xl font-bold text-primary">8. Custom Domains</h3>
+                                        <p class="text-gray-300">To provide a professional identity to the portfolio, I registered <span class="text-white font-semibold">muazamirruddin.com</span> through Cloudflare. I configured the CNAME and ALIAS records to point to the Azure SWA endpoint, enabling secure HTTPS traffic under a personalized URL.</p>
+                                        <img src="./assets/images/projects/domains.png" onclick="openModal(this.src)" alt="Custom Domain Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
                                 </div>
                             </div>
@@ -216,7 +271,7 @@
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-bold text-primary">1. Architecture Evolution</h3>
                                         <p class="text-gray-300">Transitioned from Azure SWA to a custom stack using <strong>Amazon S3</strong> for storage and <strong>CloudFront</strong> for global distribution with Origin Access Control (OAC).</p>
-                                        <img src="./assets/images/project/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture Diagram" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <img src="./assets/images/projects/aws-arch.png" onclick="openModal(this.src)" alt="AWS Architecture Diagram" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
 
                                     <div class="space-y-4">
@@ -234,17 +289,17 @@
                                             if [[ "${{ github.ref }}" == "refs/heads/main" ]]; then<br>
                                             &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_PROD }}" >> $GITHUB_ENV<br>
                                             &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_PROD }}" >> $GITHUB_ENV<br>
-                                            else<br>
+                                            &nbsp;&nbsp;else<br>
                                             &nbsp;&nbsp;echo "BUCKET_NAME=${{ secrets.S3_BUCKET_DEV }}" >> $GITHUB_ENV<br>
                                             &nbsp;&nbsp;echo "DIST_ID=${{ secrets.CF_DIST_ID_DEV }}" >> $GITHUB_ENV<br>
-                                            fi
+                                            &nbsp;&nbsp;fi
                                         </div>
                                     </div>
 
                                     <div class="space-y-4">
                                         <h3 class="text-2xl font-bold text-primary">4. Cloudflare Subdomain Routing</h3>
                                         <p class="text-gray-300">Configured Cloudflare DNS to manage the <span class="text-white">staging.muazamirruddin.com</span> subdomain, pointing to the secondary CloudFront distribution.</p>
-                                        <img src="./assets/images/project/cloudflare-dns.png" onclick="openModal(this.src)" alt="DNS Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
+                                        <img src="./assets/images/projects/cloudflare-dns.png" onclick="openModal(this.src)" alt="DNS Configuration" class="max-w-2xl rounded-lg border border-slate-700 bg-slate-900 w-full cursor-zoom-in" />
                                     </div>
                                 </div>
                             </div>
@@ -326,7 +381,6 @@
                                         <li><strong class="text-white">Fiber Infrastructure Assurance:</strong> Managed surveillance of the core optical fiber backbone; utilized NMS alerts to pinpoint fiber cuts, reducing Mean Time to Repair (MTTR).</li>
                                     </ul>
                                 </div>
-
                             </div>
                         </div>
                     </section>
@@ -346,20 +400,21 @@
                 buttons.forEach(btn => btn.classList.remove('active'));
                 document.getElementById(tabId).classList.remove('hidden');
                 evt.currentTarget.classList.add('active');
-                if (tabId !== 'projects') hideProjectDetails();
+                if (tabId === 'projects') hideProjectDetails();
                 document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
             }
 
-            function showProjectDetails(projectId) {
+            function showProjectDetails(detailId) {
                 document.getElementById('project-list-view').classList.add('hidden');
                 const details = document.querySelectorAll('.project-detail');
-                details.forEach(detail => detail.classList.add('hidden'));
-                document.getElementById(projectId).classList.remove('hidden');
+                details.forEach(d => d.classList.add('hidden'));
+                document.getElementById(detailId).classList.remove('hidden');
+                document.querySelector('.flex-1.overflow-y-auto').scrollTo({ top: 0, behavior: 'smooth' });
             }
 
             function hideProjectDetails() {
                 const details = document.querySelectorAll('.project-detail');
-                details.forEach(detail => detail.classList.add('hidden'));
+                details.forEach(d => d.classList.add('hidden'));
                 document.getElementById('project-list-view').classList.remove('hidden');
             }
 
@@ -372,7 +427,8 @@
             }
 
             function closeModal() {
-                document.getElementById('imageModal').classList.add('hidden');
+                const modal = document.getElementById('imageModal');
+                modal.classList.add('hidden');
                 document.body.style.overflow = 'auto';
             }
         </script>
